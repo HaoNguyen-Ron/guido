@@ -1,3 +1,12 @@
+<route>
+    {
+      name: "name-override",
+      meta: {
+        layout: "auth"
+      }
+    }
+</route>
+
 <script setup lang="ts">
 </script>
 

@@ -1,17 +1,9 @@
 import {createRouter, createWebHistory} from 'vue-router'
+import routes from '~pages'
 
 const router = createRouter({
     history: createWebHistory(),
-    routes : [
-        {
-            path: '/',
-            component: indexVue
-        },
-        {
-            path: '/login',
-            component: loginVue
-        }
-    ]
+    routes 
 })
 
 export default router
