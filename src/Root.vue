@@ -14,15 +14,14 @@ const layoutMap = {
   auth: LayoutAuth
 }
 
-const VNodeLayout = computed(() => layoutMap[currentLayout.value])
 </script>
 
 <template>
-  <div>
-    <Component :is="VNodeLayout">
-      <RouterView />
-    </Component>
-  </div>
+  <router-view v-slot="{ Component, route }">
+    <transition name="slide">
+      <component :is="Component" :key="route" />
+    </transition>
+  </router-view>
 </template>
 
 <style scoped></style>
