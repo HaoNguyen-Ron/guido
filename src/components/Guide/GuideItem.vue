@@ -152,7 +152,7 @@ function getLabel(attribute: {
   gap: 0.75rem;
 }
 
-.guideItemBtn {
+.guideItemBtn { 
   flex: 1;
   padding: 0.5rem 1rem;
   border-radius: 9999px;
