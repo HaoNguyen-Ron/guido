@@ -1,6 +1,17 @@
+@import url('https://cdn.jsdelivr.net/npm/@icon/themify-icons@1.0.1-alpha.3/themify-icons.min.css');
 @import 'variables';
+@import 'reset';
 
-body {
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+* {
+    font-family: 'Open San', sans-serif;
+    box-sizing: inherit;
     margin: 0;
     padding: 0;
 }
@@ -9,7 +20,19 @@ html {
     font-size: 62.5%;
 }
 
-*{
-    box-sizing: border-box;
+body {
     font-family: 'Open San', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-size: 1.4rem;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.p-grey {
+    color: var(--color-gray);
 }

@@ -32,7 +32,7 @@ function getLabel(attribute: {
   switch (attribute.key) {
     case 'experience':
 
-      return ${attribute.value / 12} năm kinh nghiệm
+      return `${attribute.value / 12} năm kinh nghiệm`
 
     default:
       return attribute.value
@@ -64,7 +64,7 @@ function getLabel(attribute: {
       <div :class="$style.guideBadgeList">
         <span
           v-for="attribute in guide.user_attributes"
-          :key="attribute-${attribute.id}"
+          :key="`attribute-${attribute.id}`"
           :class="$style.guideBadgeItem"
         >
           {{ getLabel(attribute) }}
