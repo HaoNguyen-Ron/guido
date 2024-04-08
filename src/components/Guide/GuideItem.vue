@@ -32,7 +32,7 @@ function getLabel(attribute: {
   switch (attribute.key) {
     case 'experience':
 
-      return `${attribute.value / 12} năm kinh nghiệm`
+      return `${attribute.value as number  / 12} năm kinh nghiệm`
 
     default:
       return attribute.value
