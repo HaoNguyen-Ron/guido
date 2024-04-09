@@ -2,22 +2,26 @@
 const tour = {
   title: ' Cần tuyển HDV',
   description: ' Chúng tôi đang cần HDV cho tour Đà Nẵng - Hội An - Huế cho đoàn gồm 5 khách Úc và 3 khách Đài Loan',
-  maximum_cv: 20,
-  price: 300,
-  total_destinations: [
-    {
-      id: 0,
-      name: 'Đà Nẵng',
-    },
-    {
-      id: 1,
-      name: 'Hội An',
-    },
-    {
-      id: 2,
-      name: 'Huế',
-    },
-  ],
+  tour_detail: {
+    tourist_number: 8,
+    maximum_cv: 20,
+    price: 300,
+    total_destinations: [
+      {
+        id: 0,
+        name: 'Đà Nẵng',
+      },
+      {
+        id: 1,
+        name: 'Hội An',
+      },
+      {
+        id: 2,
+        name: 'Huế',
+      },
+    ],
+
+  },
   required_skill: [
     {
       id: 0,
@@ -54,8 +58,8 @@ const tour = {
   ],
 
 }
-function handlePayLoad(payLoad: number) {
-  return `${payLoad}.000 VND`
+function handlePayLoad(price: number) {
+  return `${price}.000 VND`
 }
 
 function getLabel(attribute: {
@@ -87,7 +91,7 @@ function getLabel(attribute: {
 
       <div :class="$style.postDetailList">
         <span
-          v-for="destination in tour.total_destinations" :key="`destination-${destination.id}`"
+          v-for="destination in tour.tour_detail.total_destinations" :key="`destination-${destination.id}`"
           :class="$style.postDetailItem"
         >
           <div :class="$style.postDetailIconBlue">
@@ -114,7 +118,7 @@ function getLabel(attribute: {
 
           <div :class="$style.postDetailContent">
             <div :class="$style.postDetailTitle" class="mb-1">
-              {{ handlePayLoad(tour.price) }} / ngày
+              {{ handlePayLoad(tour.tour_detail.price) }} / ngày
             </div>
 
             <div :class="$style.postDetailNote">
@@ -143,7 +147,7 @@ function getLabel(attribute: {
           </div>
 
           <div :class="$style.postDetailContent">
-            2 trên {{ tour.maximum_cv }}
+            2 trên {{ tour.tour_detail.maximum_cv }}
           </div>
         </div>
       </div>
@@ -217,6 +221,7 @@ function getLabel(attribute: {
 .postDetailBagdeList {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap
 }
 
 .postDetailBagde {
